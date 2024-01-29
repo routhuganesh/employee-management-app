@@ -1,0 +1,71 @@
+<div class="container">
+    <div>
+        <h2>Edit Employee</h2>
+    </div>
+    <form [formGroup]="employeeForm" (ngSubmit)="onSubmit()">
+        <div class="form-row">
+            <div class="form-group" class="id">
+                <label for="id">Id:</label>
+                <input type="text" id="id" formControlName="id" class="form-control"
+                    readonly />
+            </div>
+
+            <div class="form-group" class="name">
+                <label for="name">Name:</label>
+                <input type="text" id="name" formControlName="name" class="form-control" />
+            </div>
+        </div>
+        <div class="form-row">
+            <div class="form-group" class="contactNumber">
+                <label for="contactNumber">Contact Number:</label>
+                <input type="text" id="contactNumber" formControlName="contactNumber" class="form-control" />
+            </div>
+
+            <div class="form-group">
+                <label for="email">Email:</label>
+                <input type="text" id="email" formControlName="email" class="form-control" />
+            </div>
+        </div>
+        <div class="skill-gender">
+            <div class="form-group">
+                <div class="skill-button">
+                    <label for="skill">Skill</label>
+                    <button type="button" class="btn btn-success addSkill" (click)="addSkill()">Add Skill</button>
+                </div>
+                <div formArrayName="skills" id="skill">
+                    <div *ngFor="let skillAndExpGroup of skillsAndExpForms.controls; let i = index" [formGroupName]="i"
+                        class="skill-row">
+                        <div class="form-group">
+                            <input type="text" id="skill{{ i }}" formControlName="skill" class="form-control" />
+                        </div>
+                        <div class="form-group">
+                            <input type="text" id="experience{{ i }}" formControlName="experience" class="form-control"
+                                placeholder="Experience" />
+                        </div>
+                        <div class="form-group">
+                            <button type="button" (click)="deleteSkill(i)" class="btn btn-danger">Delete</button>
+                        </div>
+                    </div>
+                </div>
+            </div>
+            <div class="form-group">
+                <label for="gender">Gender:</label>
+                <br>
+                <div class="gender">
+                    <div class="form-check ">
+                        <input type="radio" id="male" value="male" formControlName="gender" class="form-check-input">
+                        <label for="male" class="form-check-label">Male</label>
+                    </div>
+
+                    <div class="form-check">
+                        <input type="radio" id="female" value="female" formControlName="gender"
+                            class="form-check-input">
+                        <label for="female" class="form-check-label">Female</label>
+                    </div>
+                </div>
+            </div>
+        </div>
+
+        <button type="submit" class="btn btn-primary">Update</button>
+    </form>
+</div>

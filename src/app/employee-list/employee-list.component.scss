@@ -1,0 +1,32 @@
+table {
+    width: 100%;
+    border-collapse: collapse;
+    margin-top: 20px;
+  }
+  
+  /* Style for table headers */
+  th {
+    background-color: white;
+    color: black;
+    padding: 12px;
+    text-align: left;
+  }
+  
+  /* Style for table cells */
+  td {
+    border: 1px solid #ddd;
+    padding: 8px;
+  }
+  
+  /* Style for alternating rows */
+  tr:nth-child(even) {
+    background-color: #f2f2f2;
+  }
+  .add-button {
+    display: flex;
+    justify-content: flex-end;
+    margin-bottom: 10px;
+  }
+  .add-button button {
+    background-color: rgba(72, 228, 72, 0.712);
+  }

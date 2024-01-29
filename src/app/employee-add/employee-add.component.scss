@@ -1,0 +1,58 @@
+.container{
+  width: 60%;
+}
+
+.form-row{
+  display: flex;
+  justify-content: space-between;
+}
+
+.skill-row {
+  display: flex;
+  justify-content: flex-start;
+  align-items: baseline;
+  margin-bottom: 10px;
+}
+
+.skill-gender{
+  display: flex;
+  justify-content: space-between;
+}
+
+.gender{
+  display: flex;
+  flex-direction: row;
+}
+
+#id, #name,#contactNumber, #email {
+  width: 300px;
+}
+
+.id {
+  flex-grow: 0.2;
+}
+
+.contactNumber {
+  flex-grow: 0.2;
+}
+
+
+.skill-gender {
+
+  margin-top: 10px;
+}
+
+.skill-button {
+  display: flex;
+  justify-content: space-between;
+}
+.skill-button button {
+  color: white;
+  background-color: rgba(31, 129, 31, 0.712);
+}
+
+.addSkill{
+  width: 70px;
+  height: 30px;
+
+}
