@@ -20,7 +20,6 @@
         <td>{{ employee.contactNumber }}</td>
         <td>{{ employee.email }}</td>
         <td>{{ employee.gender }}</td>
-        <!-- <td>{{ employee.skills.join(', ') }}</td> -->
         <td>
           <ul>
             <li *ngFor="let skill of employee.skills">
@@ -30,7 +29,6 @@
           {{ logEmployee(employee) }}
         </td>
         <td>
-          <!-- <button (click)="editEmployee(employee.id)">&#9998;</button> -->
           <button (click)="editEmployee(employee.id)"><i class="fas fa-edit"></i></button>
           <button (click)="deleteEmployee(employee.id)"><i class="fas fa-trash"></i></button>
         </td>

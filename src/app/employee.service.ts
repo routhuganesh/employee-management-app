@@ -15,7 +15,6 @@ export class EmployeeService {
 
   private employees: Employee[] = [];
   private skills: Skill[] = [];
-  // private lastAssignedId: number = 0;
   constructor() { }
 
   getEmployees(): Employee[] {
@@ -29,13 +28,8 @@ export class EmployeeService {
   addEmployee(employee: Employee): void {
     if(employee.skills)
     {
-    // employee.id = ++ this.lastAssignedId;
     const skillIdGenerator = () => Math.floor(Math.random() * 1000); // Example skill ID generator
 
-  // Assign unique skill IDs to each skill in the employee's skills array
-  // employee.skills.forEach(skill => {
-  //   skill.id = skillIdGenerator();
-  // });
   for (let i = 0; i < employee.skills.length; i++) {
     const skill = employee.skills[i];
     skill.id = skillIdGenerator();
@@ -55,9 +49,6 @@ export class EmployeeService {
       this.employees[index] = updatedEmployee;
     }
   }
-  // editEmployee(employeeId: number,updatedEmployee: any){
-  //   this.employees[employeeId] = updatedEmployee;
-  // }
   addSkill(skill: Skill): void {
     skill.id = Math.floor(Math.random() * 1000);
     this.skills.push(skill);

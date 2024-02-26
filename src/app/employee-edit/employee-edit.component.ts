@@ -20,9 +20,6 @@ export class EmployeeEditComponent implements OnInit {
     this.route.params.subscribe(params => {
       this.employeeId = params['id'];
       // Retrieve the employee details from the service
-      // this.employeeService.getEmployees().subscribe((employees: any[]) => {
-      //   this.employee = employees.find(employee => employee.id === this.employeeId);
-      //});
       this.employee = this.employeeService.getEmployeeById(this.employeeId);
       this.initForm(this.employee);
     });

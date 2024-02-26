@@ -24,17 +24,8 @@ export class EmployeeListComponent implements OnInit{
     const confirmDelete = confirm("Are you sure want to delete");
     if(confirmDelete)
     {
-      //this.showSuccessMessage(employee.name);
       this.employees = this.employeeService.deleteEmployee(id);
     }
-     //this.employees = this.employeeService.deleteEmployee(id);
-  }
-  showSuccessMessage(employeeName: string): void {
-    const message = `The Employee ${employeeName} is deleted successfully.`;
-    // Display the message
-    setTimeout(() => {
-      // Hide the message after 2 seconds
-    }, 2000);
   }
   editEmployee(id: number): void {
     this.router.navigate(['/edit',id]);
